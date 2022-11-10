@@ -17,7 +17,7 @@ export default function NavBar() {
         </Link>
         <style jsx>{`
         nav { 
-            background-color: tomato; 
+            background-color: yellow; 
         }
         p {
             text-decoration: none;

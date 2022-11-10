@@ -56,3 +56,15 @@
     `}< /style>
 5> Sass Support
   - Next.js를 사용하면.scss 및.sass 확장자를 모두 사용하여 Sass를 가져올 수 있습니다.
+
+# 1.6 Custom App
+1> 애플리케이션에 Global Styles를 추가하는 법을 배우기
+2> Custome App
+ - Next.js는 App 컴포넌트를 사용하여 page를 초기화한다. 이를 재정의하고 페이지 초기화를 제어할 수 있다. 이를 통해 다음과 같은 일을 할 수 있다
+ => 페이지 변경 간에 레이아웃 유지
+ => 페이지 탐색 시 state 유지
+ => componentDidCatch를 사용한 Custom 에러 처리
+ => 페이지에 추가 데이터 삽입
+ => Global CSS 추가
+3> 기본 App을 재정의하려면 ./pages/_app.js 파일을 만든다.
+4> 파일명.module.css 파일 형태를 제외한 모든 나머니 css 파일들은 _app.js에서만 import해서 사용해야 한다. 글로벌 css간의 충돌을 피하기 위해서이다.

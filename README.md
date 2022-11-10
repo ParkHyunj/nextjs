@@ -30,3 +30,14 @@
 # 1.3 Routing
 1> link 태그 안에는 a 태그를 사용하면 안 된다.
 2> 상단바 파일을 만들어서 이용자들이 보는 각각의 페이지에 import로 적용시키기
+
+# 1.4 CSS Modules
+1> 직접 태그에 style을 먹이기
+2> CSS Module 사용하기
+  - className={`${styles.link} ${router.pathname === "/" ? styles.active : ""}`}
+  - [styles.link, router.pathname === "/" ? styles.active : ""].join(" ")
+3> Array.prototype.join()
+  - join() 메서드는 배열의 모든 요소를 연결해 하나의 문자열로 만듭니다.
+  - const elements = ['Fire', 'Air', 'Water'];
+  - console.log(elements.join()); // expected output: "Fire,Air,Water"
+  - console.log(elements.join('-')); // expected output: "Fire-Air-Water"

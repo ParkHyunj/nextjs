@@ -41,3 +41,18 @@
   - const elements = ['Fire', 'Air', 'Water'];
   - console.log(elements.join()); // expected output: "Fire,Air,Water"
   - console.log(elements.join('-')); // expected output: "Fire-Air-Water"
+4> Next.js는[name].module.css 파일 명명 규칙을 사용하여 CSS Module을 지원합니다.
+
+
+# 1.5 Styles JSX
+1> styles를 추가하는 또 다른 방법 - Built-In CSS Support(내장 CSS 지원)
+2> Next.js를 사용하면 JavaScript 파일에서 CSS 파일을 가져올 수 있다. 
+   이것은 Next.js가 import 개념을 JavaScript 이상으로 확장하기 때문에 가능하다.
+3> CSS-in-JS
+  - 격리된 범위 CSS에 대한 지원을 제공하기 위해 styled-jsx를 번들로 제공한다. 목표는 불행히도 서버 렌더링을 지원하지 않고 JS 정요인 Web Components와 유사한 "Shadow CSS"를 지원하는 것이다.
+4> styled-jsx를 사용하는 컴포넌트
+  - < style jsx>{`
+       CSS 스타일..
+    `}< /style>
+5> Sass Support
+  - Next.js를 사용하면.scss 및.sass 확장자를 모두 사용하여 Sass를 가져올 수 있습니다.

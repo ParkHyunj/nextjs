@@ -13,3 +13,10 @@
    - inversion of control(통제의 역전)
    - library에서 method를 호출하면 사용자가 제어할 수 있다.
    - framework는 제어가 역전되어 framework가 사용자를 호출한다.
+
+# 1.1 Pages
+1> pages에 있는 파일의 이름이 그대로 url로 들어간다.
+2> pages의 파일에 있는 component의 이름은 중요하지 않다.
+3> 이용자들에게 보여주고 싶은게 있다면, pages 폴더에서 export default function을 해야 한다.
+4> pages의 파일에 있는 파일의 이름으로 url이 생성되지만, index.js는 기본적으로 /이후에 url이 없다.(/index 또한 없다.)
+5> import react from 'react';를 쓸 필요는 없지만, usestate, useeffect, lifecycle method 등은 import를 꼭 해줘야 한다.

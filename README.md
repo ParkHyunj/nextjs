@@ -123,3 +123,16 @@
       return { props: { data } }
       }
 3> getServerSideProps라는 함수를 export하고 그 안의 코드는 server에서 돌아가게 된다.
+
+# 2.4 Recap
+1> getServerSideProps를 사용하는 경우
+ - request time에 반드시 데이터를 fetch해와야 하는 페이지를 pre-render해야 하는 경우
+ - 데이터를 pre-render할 필요가 없다면 client slide에서 데이터를 가져오는 것을 고려해야 한다.
+2> 클라이언트 측에서 데이터를 가져오는 과정(Fetching data on the clint side)
+ - 페이지에 자주 업데이트되는 데이터가 포함되어 있고 데이터를 pre-render할 필요가 없는 경우 클라이언트 측에서 데이터를 가져올 수 있다.
+ (1) 먼저 데이터가 없는 페이지를 즉시 표시한다.
+ (2) 페이지의 일부는 Static Generation을 사용해 pre-render할 수 있다.
+ (3) 없는 데이터를 위해 loading 상태를 표시할 수 있다.
+ (4) 그런 다음 클라이언트 측에서 데이터를 가져와 준비가 되면 표시한다.
+3> getServerSideProps가 오류 페이지를 렌더링할까요?
+ - getServerSideProps 내부에서 오류가 발생하면 pages/500.js 파일이 표시된다. 500 page(서버 렌더링 오류 페이지)는 사용자가 커스터 마이징 할 수 있다. 개발 중에는 이 파일이 사용되지 않고 대신 개발 overray가 표시된다.

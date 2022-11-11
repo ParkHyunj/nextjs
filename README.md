@@ -147,3 +147,15 @@
  - pages/movies/[...id].js는 /movies/1와 일치하지만 /movies/1/2, /movies/1/ab/cd 등과도 일치한다. 
  - 일치하는 매개변수는 페이지에 쿼리 매개변수로 전송되며 항상 배열이므로 /movies/a 경로에는 다음 쿼리 개체가 있다.
  - ex) { "id": ["a"] }
+
+# 2.6 Movie Detail
+1> router.push(url, as, options)
+ - 클라이언트 측 전환을 처리한다. 이 방법은 next/link가 충분하지 않은 경우에 유용하다.
+ - url : UrlObject | String: 탐색할 URL
+ - as : UrlObject | String: 브라우저 URL 표시줄에 표시될 경로에 대한 선택적 데코레이터다. 
+ - router.push({
+   pathname: '/post/[pid]',
+   query: { pid: post.id },
+})
+2> 외부 URL에 대해서는 router.push()를 사용할 필요가 없다.
+3> window.location을 사용하는 것이 더 적합하다.

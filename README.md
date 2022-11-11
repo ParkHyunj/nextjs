@@ -136,3 +136,14 @@
  (4) 그런 다음 클라이언트 측에서 데이터를 가져와 준비가 되면 표시한다.
 3> getServerSideProps가 오류 페이지를 렌더링할까요?
  - getServerSideProps 내부에서 오류가 발생하면 pages/500.js 파일이 표시된다. 500 page(서버 렌더링 오류 페이지)는 사용자가 커스터 마이징 할 수 있다. 개발 중에는 이 파일이 사용되지 않고 대신 개발 overray가 표시된다.
+
+# 2.5 Dynamic Routes
+1> url에 변수를 넣는 방법에 대해 배우기
+2> Dynamic Routes
+ - next.js에서는 page에 대괄호([param])를 추가하여 Dynamic Route를 생성할 수 있다.
+ - /movies/1, /movies/abc 등과 같은 모든 경로는 pages/movies/[id].js와 일치한다.
+3> Catch all routes
+ - 대괄호 안에 세 개의 점(...)을 추가하여 모든 경로를 포착하도록 Dynamic Routes를 확장할 수 있다.
+ - pages/movies/[...id].js는 /movies/1와 일치하지만 /movies/1/2, /movies/1/ab/cd 등과도 일치한다. 
+ - 일치하는 매개변수는 페이지에 쿼리 매개변수로 전송되며 항상 배열이므로 /movies/a 경로에는 다음 쿼리 개체가 있다.
+ - ex) { "id": ["a"] }

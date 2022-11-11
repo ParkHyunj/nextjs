@@ -159,3 +159,11 @@
 })
 2> 외부 URL에 대해서는 router.push()를 사용할 필요가 없다.
 3> window.location을 사용하는 것이 더 적합하다.
+
+# 2.7 Catch All
+1> getServerSideProps
+ - 페이지에서 getServerSideProps(서버 측 렌더링)라는 함수를 export하는 경우, Next.js는 getServerSideProps에서 반환된 데이터를 사용하여 각 request에서 이 페이지를 pre-render한다.
+2> params : 이 페이지에서 dynamic route(동적 경로)를 사용하는 경우 params에 route parameter가 포함된다. 
+   페이지 이름이 [id].js이면 params는 { id: ... }처럼 보일 것이다.
+3> query: 쿼리 문자열을 나타내는 객체다.
+4> 무한대로 catch할 수 있는 url

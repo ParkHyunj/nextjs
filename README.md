@@ -86,3 +86,7 @@
       );
     }
 6> children : react.js가 제공하는 prop으로, 하나의 component를 또 다른 component 안에 넣을 때 쓸 수 있다.
+
+# 2.1 Fetching Data
+1> npm run dev 후, 2번씩 실행이 된다면, next.config.js 내에세 reactStrictMode를 false 시켜주기
+2> public 폴더는 이미지를 넣는 곳

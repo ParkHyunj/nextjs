@@ -90,3 +90,19 @@
 # 2.1 Fetching Data
 1> npm run dev 후, 2번씩 실행이 된다면, next.config.js 내에세 reactStrictMode를 false 시켜주기
 2> public 폴더는 이미지를 넣는 곳
+
+# 2.2 Redirect and Rewrite
+1> api_key를 비공개로 돌리는 방법 => request에 mask를 씌우는 것 같은 redirect, rewrite
+2> next.config.js
+ - Next.js에서 custom 설정을 하기 위해서는 project directory의 루트(package.json 옆)에 있는 next.config.js 또는 next.config.mjs 파일을 만들 수 있다. next.config.js는 json 파일이 아닌 일반 node.js 모듈이다.
+   Next.js 서버 및 빌드 단계에서 사용되며 브라우저 빌드에는 포함되지 않는다.
+3> Ridirects(URL 변경됨)
+ - Redirect을 사용하면 들어오는 request 경로를 다른 destination 경로로 Redirect할 수 있다. Redirect을 사용하려면 next.config.js에서 redirects 키를 사용할 수 있다.
+4> redirects는 source.destination 및 permanent 속성이 있는 객체를 포함하는 배열을 반환하는 비동기 함수다. 
+  - source : 들어오는 request 경로 패턴(request 경로)
+  - destination : 라우팅하려는 경로(redirect할 경로)
+  - permanent : true인 경우, 클라이언트와 search 엔진에 redirect를 영구적으로 cache하도록 지시하는 308 status code를 사용하고, false인 경우 일시적이고 cache되지 않은 307 status code를 사용한다.
+5> Rewrites(URL 변경되지 않음)
+ - Rewrites를 사용하면 들어오는 request 경로를 다른 destination 경로에 매핑할 수 있다.
+ - Rewrites는 URL 프록시 역할을 하고 destination 경로를 mask하여 사용자가 사이트에서 위치를 변경하지 않은 것처럼 보이게 한다. 반대로 redirects은 새 페이지로 reroute되고 URL 변경 사항을 표시한다.
+6> .env 파일 -> git ignore => git에 연동되지 않는다.

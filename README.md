@@ -68,3 +68,21 @@
  => Global CSS 추가
 3> 기본 App을 재정의하려면 ./pages/_app.js 파일을 만든다.
 4> 파일명.module.css 파일 형태를 제외한 모든 나머니 css 파일들은 _app.js에서만 import해서 사용해야 한다. 글로벌 css간의 충돌을 피하기 위해서이다.
+
+# 2.0 Patterns
+1> 미니 무니 앱 만들기
+2> Layouts
+  - react 모델을 사용하면 페이지를 일련의 컴포넌트로 분해할 수 있다. 이러한 컴포넌트 중 많은 부분이 페이지 간에 재사용되는 경우가 많다. 예를 들어, 모든 페이지에 동일한 navigation과 footer가 있을 수 있다.
+3> Head(next/head)
+  - 페이지 head에 엘리멘트를 추가하기 위한 내장 컴포넌트를 노출한다. head에 태그가 중복되지 않도록 하려면 다음 예제와 같이 태그가 한 번만 렌더링되도록 하는 key 속성을 사용할 수 있다.
+4> const obj = { '/': 'Home, 'about': 'About' }로 선언하고 obj[router.pathname]으로 할당해주면 props로 넘겨주지 않고 사용가능하다. 
+  => {obj[router.pathname}}
+5> import Navbar from "./Navbar";
+    export default function Layout({children}: React.PropsWithChildren) {
+      return (
+        <>
+          {children}
+        </>
+      );
+    }
+6> children : react.js가 제공하는 prop으로, 하나의 component를 또 다른 component 안에 넣을 때 쓸 수 있다.

@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Seo from "../components/Seo";
+import PortfolioContext from '../context/context';
+import React, { useContext } from 'react';
 
 export default function Home({ results }) {
     const router = useRouter();
     const onClick = (id, title) => {
         router.push(`/movies/${title}/${id}`);
     };
+    const { prefix } = useContext(PortfolioContext);
 
     return(
         <div className="container">
@@ -17,7 +20,7 @@ export default function Home({ results }) {
                   className="movie"
                   key={movie.id}
                 >
-                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+                    <img src={`${prefix}https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt = "profile" />
                     <h4>
                         <Link href={`/movies/${movie.original_title}/${movie.id}`}>
                         <div>{movie.original_title}</div>

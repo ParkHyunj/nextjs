@@ -2,6 +2,10 @@ const API_KEY = process.env.API_KEY;
 
 module.exports = {
   reactStrictMode: true,
+  assetPrefix:
+    process.env.NODE_ENV ==="production"
+      ? "https://ParkHyunj.github.io/nextjs"
+      : "",
 
   async redirects() {
     return [

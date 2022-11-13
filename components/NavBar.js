@@ -1,11 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import PortfolioContext from '../context/context';
+import React, { useContext } from "react";
 
 export default function NavBar() {
   const router = useRouter();
+  const { prefix } = useContext(PortfolioContext);
+
   return (
     <nav>
-      <img src="/vercel.svg" />
+      <img src={`${prefix}/vercel.svg`} alt="profile" />
       <div>
         <Link href="/">
           <p className={router.pathname === "/" ? "active" : ""}>Home</p>
